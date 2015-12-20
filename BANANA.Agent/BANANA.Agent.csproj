@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2D8DA24-401F-4402-B1A3-3F8C39A5BE58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BANANA.Agent</RootNamespace>
+    <AssemblyName>BANANA.Agent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\WebDev\BANANA.Framework\deploy\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://211.232.104.186:8080/Setup/</InstallUrl>
+    <TargetCulture>ko-KR</TargetCulture>
+    <ProductName>바나나 에이전트</ProductName>
+    <PublisherName>iNFINIHANCE Corporation</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>52</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_45;NETFX_40;NETFX_35;NETFX_30;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\BANANA.Agent.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>96150CDFE18E1E079338FEF344AEED078394D5B3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>BANANA.Agent_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppManager">
+      <HintPath>..\..\..\bin\AppManager.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFLibNet">
+      <HintPath>..\..\External Files\xpdf\x86\PDFLibNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Shared Files\AssemblySharedInfo.cs">
+      <Link>Properties\AssemblySharedInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Shared Files\AssemblySharedVersion.cs">
+      <Link>Properties\AssemblySharedVersion.cs</Link>
+    </Compile>
+    <Compile Include="Controllers\DownloadHandler.cs" />
+    <Compile Include="Controllers\DownloadRemain.cs" />
+    <Compile Include="Controllers\DownloadSpeed.cs" />
+    <Compile Include="Controllers\Events\BytesReceivedEventArgs.cs" />
+    <Compile Include="Controllers\Events\DownloadFinishedEventArgs.cs" />
+    <Compile Include="Controllers\PdfViewer\GDI.cs" />
+    <Compile Include="Controllers\PdfViewer\HexEncoding.cs" />
+    <Compile Include="Controllers\PdfViewer\RawPrinterHelper.cs" />
+    <Compile Include="Controllers\PdfViewer\StatusBusy.cs" />
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\GlobalEventProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\HookManager.Callbacks.cs" />
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\HookManager.cs" />
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\HookManager.Structures.cs" />
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\HookManager.Windows.cs" />
+    <Compile Include="Controllers\PdfViewer\UserActivityMonitor\MouseEventExtArgs.cs" />
+    <Compile Include="Controls\CollapsibleSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ListViewNF.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentDownloader.Designer.cs">
+      <DependentUpon>DocumentDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentViewer.Designer.cs">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DownloadManager.Designer.cs">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PdfViewer\PageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PdfViewer\SearchPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PdfViewer\SearchPdf.Designer.cs">
+      <DependentUpon>SearchPdf.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DocumentDownloader.resx">
+      <DependentUpon>DocumentDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DocumentViewer.resx">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DownloadManager.resx">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PdfViewer\SearchPdf.resx">
+      <DependentUpon>SearchPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+    <Content Include="Resources\back_01.png" />
+    <Content Include="Resources\back_02.png" />
+    <None Include="Resources\ZoomOut.png" />
+    <None Include="Resources\ZoomIn.png" />
+    <None Include="Resources\dmdskres_373_9_16x16x32.png" />
+    <Content Include="Resources\downloadmanager_.ico" />
+    <None Include="Resources\FeedbackTool_109_12_16x16x32.png" />
+    <None Include="Resources\netshell_1611_1_16x16x32.png" />
+    <None Include="Resources\netshell_21611_1_16x16x32.png" />
+    <Content Include="Resources\protocol.ico" />
+    <None Include="Resources\SearchFolder_323_3_16x16x32.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\save.ico" />
+    <None Include="Resources\tshadowdown.png" />
+    <None Include="Resources\tshadowdownleft.png" />
+    <None Include="Resources\tshadowdownright.png" />
+    <None Include="Resources\tshadowright.png" />
+    <None Include="Resources\tshadowtopright.png" />
+    <Content Include="Resources\website.ico" />
+    <None Include="Resources\about.ico" />
+    <Content Include="Resources\BANANA.Agent.ico" />
+    <Content Include="Resources\BANANA.Agent.png" />
+    <None Include="Resources\documentviewer.ico" />
+    <None Include="Resources\downloadmanager.ico" />
+    <None Include="Resources\exit.ico" />
+    <Content Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BANANA.Common\BANANA.Common.v4.5.csproj">
+      <Project>{800a02f9-9704-4a8d-88ed-0229565a5252}</Project>
+      <Name>BANANA.Common.v4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BANANA.International\BANANA.International.v4.5.csproj">
+      <Project>{2c3e042d-9ab6-4ffb-aada-ea62e5744df9}</Project>
+      <Name>BANANA.International.v4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BANANA.Windows\BANANA.Windows.v4.5.csproj">
+      <Project>{17134afe-3286-4994-baf0-2ebee17c8761}</Project>
+      <Name>BANANA.Windows.v4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Controls\BANANA.Web.Controls\BANANA.Web.Controls.v4.5.csproj">
+      <Project>{2b32d3c1-743e-4a7f-a7e5-8fadcb25e744}</Project>
+      <Name>BANANA.Web.Controls.v4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Controls\BANANA.Windows.Controls\BANANA.Windows.Controls.v4.5.csproj">
+      <Project>{21ea7bd6-15b5-4717-a439-ca28f209e7fd}</Project>
+      <Name>BANANA.Windows.Controls.v4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BANANA.Agent.Setup\BANANA.Agent.Setup.csproj">
+      <Project>{b26fbcbf-799b-4ff6-a254-45335dfbdb15}</Project>
+      <Name>BANANA.Agent.Setup</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
