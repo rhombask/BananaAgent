@@ -8,3 +8,13 @@
 파일 업로드 컨트롤에 대한 상세한 설명은 아래 url에서 확인하실 수 있습니다.
 
 http://www.bananaframework.net/Views/FileUpload.aspx
+
+파일 업로드 컨트롤에 대한 데모는 아래 url에서 확인하실 수 있습니다.
+
+http://doc.bananaframework.net/Default.aspx?url=/Views/BANANA-Web-Controls/FileUpload-Demo.aspx
+
+본 프로그래을 정상적으로 실행하기 위해서는 Microsoft .NET Framework 4.0 이상과 바나나 프레임워크 설치가 필요합니다.
+
+바나나 프레임워크 설치에 대한 도움이 필요하시면, rhombask@gmail.com으로 이메일 부탁 드립니다.
+
+감사합니다.
